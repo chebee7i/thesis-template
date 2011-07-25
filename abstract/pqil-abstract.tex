@@ -1,0 +1,26 @@
+\def\master{}
+\input{../settings/phdsetup}
+
+\renewenvironment{abstract}
+{
+    \noindent\begin{minipage}{\textwidth}
+    \singlespacing
+    \raggedleft
+    \PHDAUTHOR{}\\
+    \PHDMONTH{} \PHDYEAR{}\\
+    \PHDDEPT{}
+    \end{minipage}
+
+    \vspace*{\baselineskip}
+
+    \centerline{\PHDTITLE{}}
+
+    \centerline{\textbf{Abstract}}
+	\noindent
+}{}
+
+\thispagestyle{empty}
+
+\begin{document}
+\input{../abstract/abstract}
+\end{document}

@@ -1,0 +1,24 @@
+% AUTOCOMPILE
+% Allows for individual chapters to be compiled.
+
+% Usage:
+% \ifx\master\undefined\input{../settings/autocompile}\fi
+% (place at start and end of chapter file)
+
+\ifx\noprelim\undefined
+    % first time included
+    % input preamble files
+    \input{../settings/phdsetup}
+
+    \begin{document}
+    \def\noprelim{}
+\else
+    % already included once
+    % input post files
+
+    \singlespacing
+    \bibliographystyle{../bibliography/expanded}
+    \bibliography{../bibliography/references}
+
+    \end{document}
+\fi

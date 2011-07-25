@@ -1,0 +1,36 @@
+# latex
+*.aux
+*.bbl
+*.blg
+*.brf
+*.dpth
+*.dvi
+*.end
+*.log
+*.lof
+*.lot
+*.out
+*.ps
+*.tex~
+*.bbl
+*.nav
+*.snm
+*.toc
+*.vrb
+
+dissertation.pdf
+chapter*.pdf
+appendix*.pdf
+dedication.pdf
+acknowledgments.pdf
+abstract.pdf
+pqil-abstract.pdf
+title.pdf
+
+# python
+*.pyc
+*.pyo
+
+# Backup files for gedit
+*~
+

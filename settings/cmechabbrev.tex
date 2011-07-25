@@ -1,0 +1,425 @@
+
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\emphasis}[1] {\emph{#1}}
+% Highlight technical vocabulary
+\newcommand{\vocab}[1] {\emph{#1}}
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\newcommand{\hcylinder}[1]{#1}
+\newcommand{\fcylinder}[1]{#1}
+\newcommand{\cylinder}[2]{(#1,#2)}
+
+% Abbreviations from CMPPSS:
+
+\newcommand{\eM}     {\mbox{$\epsilon$-machine}}
+\newcommand{\eMs}    {\mbox{$\epsilon$-machines}}
+\newcommand{\EM}     {\mbox{$\epsilon$-Machine}}
+\newcommand{\EMs}    {\mbox{$\epsilon$-Machines}}
+\newcommand{\eT}     {\mbox{$\epsilon$-transducer}}
+\newcommand{\eTs}    {\mbox{$\epsilon$-transducers}}
+\newcommand{\ET}     {\mbox{$\epsilon$-Transducer}}
+
+% cryptic
+\newcommand{\order}[1]{order\protect\nobreakdash-$#1$}
+\newcommand{\Order}[1]{Order\protect\nobreakdash-$#1$}
+\newcommand{\cryptic}[1]{$#1$\protect\nobreakdash-cryptic}
+\newcommand{\Cryptic}[1]{$#1$\protect\nobreakdash-Cryptic}
+\newcommand{\crypticity}[1]{$#1$\protect\nobreakdash-crypticity}
+\newcommand{\Crypticity}[1]{$#1$\protect\nobreakdash-Crypticity}
+
+\newcommand{\ETs}    {\mbox{$\epsilon$-Transducers}}
+
+% Processes and sequences
+
+\newcommand{\Process}{\mathcal{P}}
+\newcommand{\Support}{\mathcal{L}}
+\newcommand{\ProbMach}{\Prob_{\mathrm{M}}}
+\newcommand{\Lmax}   { {L_{\mathrm{max}}}}
+\newcommand{\MeasAlphabet}	{\mathcal{A}}
+% Original symbol
+%\newcommand{\MeasSymbol}   { {S} }
+%\newcommand{\meassymbol}   { {s} }
+% New symbol
+\newcommand{\MeasSymbol}   { {X} }
+\newcommand{\meassymbol}   { {x} }
+\newcommand{\BiInfinity}	{ \smash{\overleftrightarrow {\MeasSymbol}} }
+\newcommand{\biinfinity}	{ \smash{\overleftrightarrow {\meassymbol}} }
+\newcommand{\Past}	{ \smash{\overleftarrow {\MeasSymbol}} }
+\newcommand{\past}	{ \smash{\overleftarrow {\meassymbol}} }
+\newcommand{\pastprime}	{ {\past}^{\prime}}
+\newcommand{\Future}	{ \smash{\overrightarrow{\MeasSymbol}} }
+\newcommand{\future}	{ \smash{\overrightarrow{\meassymbol}} }
+\newcommand{\futureprime}	{ \smash{\future^{\prime}} }
+\newcommand{\PastPrime}	    { \smash{\Past^{\prime}} }
+\newcommand{\FuturePrime}	{ \smash{\overrightarrow{\meassymbol}^\prime} }
+\newcommand{\PastDblPrime}	{ \smash{\overleftarrow{\meassymbol}^{\prime\prime}} }
+\newcommand{\FutureDblPrime}{ \smash{\overrightarrow{\meassymbol}^{\prime\prime}} }
+\newcommand{\pastL}	{ \smash{\overleftarrow {\meassymbol}{}^L} }
+\newcommand{\PastL}	{ \smash{\overleftarrow {\MeasSymbol}{}^L} }
+\newcommand{\PastLt}	  { \smash{\overleftarrow {\MeasSymbol}_t^L} }
+\newcommand{\PastLLessOne}{ \smash{\overleftarrow {\MeasSymbol}^{L-1}} }
+\newcommand{\futureL}	  { \smash{\overrightarrow{\meassymbol}{}^L} }
+\newcommand{\FutureL}	  { \smash{\overrightarrow{\MeasSymbol}{}^L} }
+\newcommand{\FutureLt}	  { \smash{\overrightarrow{\MeasSymbol}_t^L} }
+\newcommand{\FutureLLessOne}{ \smash{\overrightarrow{\MeasSymbol}^{L-1}} }
+\newcommand{\pastLprime}	{ \smash{\overleftarrow {\meassymbol}^{L^\prime}} }
+\newcommand{\futureLprime}	{ \smash{\overrightarrow{\meassymbol}^{L^\prime}} }
+\newcommand{\AllPasts}	    { \smash{\overleftarrow{ {\rm {\bf \MeasSymbol}} } } }
+\newcommand{\AllFutures}	{ \smash{\overrightarrow{ {\rm {\bf \MeasSymbol}} } } }
+\newcommand{\FutureSet}	{ \smash{\overrightarrow{\bf \MeasSymbol}} }
+
+% Causal states and epsilon-machines
+\newcommand{\CausalState}	{ \mathcal{S} }
+\newcommand{\CausalStatePrime}	{ {\CausalState}^{\prime}}
+\newcommand{\causalstate}	{ \sigma }
+\newcommand{\CausalStateSet}	{ \boldsymbol{\CausalState} }
+%\newcommand{\AlternateState}	{ \mathcal{R} }
+\newcommand{\AlternateState}	{ R }
+%\newcommand{\AlternateStatePrime}	{ {\cal R}^{\prime} }
+\newcommand{\AlternateStatePrime}	{ R^{\prime} }
+\newcommand{\alternatestate}	{ \rho }
+\newcommand{\alternatestateprime}	{ {\rho^{\prime}} }
+%\newcommand{\AlternateStateSet}	{ \boldsymbol{\AlternateState} }
+\newcommand{\AlternateStateSet}	{ \mathcal{R} }
+\newcommand{\PrescientState}	{ \widehat{\AlternateState} }
+\newcommand{\prescientstate}	{ \widehat{\alternatestate} }
+\newcommand{\PrescientStateSet}	{ \boldsymbol{\PrescientState}}
+\newcommand{\CausalEquivalence}	{ {\sim}_{\epsilon} }
+\newcommand{\CausalEquivalenceNot}	{ {\not \sim}_{\epsilon}}
+
+\newcommand{\NonCausalEquivalence}	{ {\sim}_{\eta} }
+\newcommand{\NextObservable}	{ {\smash{\overrightarrow {\MeasSymbol}}^1} }
+\newcommand{\LastObservable}	{ {\smash{\overleftarrow {\MeasSymbol}}^1} }
+%\newcommand{\Prob}		{ {\rm P}}
+\newcommand{\Prob}      {\Pr} % use standard command
+\newcommand{\ProbAnd}	{ {,\;} }
+\newcommand{\LLimit}	{ {L \rightarrow \infty}}
+\newcommand{\Cmu}		{C_\mu}
+\newcommand{\hmu}		{h_\mu}
+\newcommand{\EE}		{{\bf E}}
+\newcommand{\TI}		{{\bf T}}
+\newcommand{\SI}        {{\bf S}}
+\newcommand{\Measurable}{{\bf \mu}}
+
+% Process Crypticity
+\newcommand{\PC}		{\chi}
+
+% Causal Irreversibility
+\newcommand{\CI}		{\Xi}
+\newcommand{\ReverseMap}	{r}
+\newcommand{\ForwardMap}	{f}
+
+% Abbreviations from IB:
+% None that aren't already in CMPPSS
+
+% Abbreviations from Extensive Estimation:
+\newcommand{\EstCausalState}	{\widehat{\CausalState}}
+\newcommand{\estcausalstate}	{\widehat{\causalstate}}
+\newcommand{\EstCausalStateSet}	{\boldsymbol{\EstCausalState}}
+\newcommand{\EstCausalFunc}	{\widehat{\epsilon}}
+\newcommand{\EstCmu}		{\widehat{\Cmu}}
+\newcommand{\PastLOne}	{{\Past}^{L+1}}
+\newcommand{\pastLOne}	{{\past}^{L+1}}
+
+% Abbreviations from $\epsilon$-Transducers:
+\newcommand{\InAlphabet}	{ \mathcal{A}}
+\newcommand{\insymbol}		{ a}
+\newcommand{\OutAlphabet}	{ \mathcal{B}}
+\newcommand{\outsymbol}		{ b}
+\newcommand{\InputSimple}	{ X}
+\newcommand{\inputsimple}	{ x}
+\newcommand{\BottleneckVar}	{\tilde{\InputSimple}}
+\newcommand{\bottleneckvar}	{\tilde{\inputsimple}}
+\newcommand{\InputSpace}	{ \mathbf{\InputSimple}}
+\newcommand{\InputBi}	{ \overleftrightarrow {\InputSimple} }
+\newcommand{\inputbi}	{ \overleftrightarrow {\inputsimple} }
+\newcommand{\InputPast}	{ \overleftarrow {\InputSimple} }
+\newcommand{\inputpast}	{ \overleftarrow {\inputsimple} }
+\newcommand{\InputFuture}	{ \overrightarrow {\InputSimple} }
+\newcommand{\inputfuture}	{ \overrightarrow {\inputsimple} }
+\newcommand{\NextInput}	{ {{\InputFuture}^{1}}}
+\newcommand{\NextOutput}	{ {\OutputFuture}^{1}}
+\newcommand{\OutputSimple}	{ Y}
+\newcommand{\outputsimple}	{ y}
+\newcommand{\OutputSpace}	{ \mathbf{\OutputSimple}}
+\newcommand{\OutputBi}	{ \overleftrightarrow{\OutputSimple} }
+\newcommand{\outputbi}	{ \overleftrightarrow{\outputsimple} }
+\newcommand{\OutputPast}	{ \overleftarrow{\OutputSimple} }
+\newcommand{\outputpast}	{ \overleftarrow{\outputsimple} }
+\newcommand{\OutputFuture}	{ \overrightarrow{\OutputSimple} }
+\newcommand{\outputfuture}	{ \overrightarrow{\outputsimple} }
+\newcommand{\OutputL}	{ {\OutputFuture}^L}
+\newcommand{\outputL}	{ {\outputfuture}^L}
+\newcommand{\InputLLessOne}	{ {\InputFuture}^{L-1}}
+\newcommand{\inputLlessone}	{ {\inputufutre}^{L-1}}
+\newcommand{\OutputPastLLessOne}	{{\OutputPast}^{L-1}_{-1}}
+\newcommand{\outputpastLlessone}	{{\outputpast}^{L-1}}
+\newcommand{\OutputPastLessOne}	{{\OutputPast}_{-1}}
+\newcommand{\outputpastlessone}	{{\outputpast}_{-1}}
+\newcommand{\OutputPastL}	{{\OutputPast}^{L}}
+\newcommand{\OutputLPlusOne}	{ {\OutputFuture}^{L+1}}
+\newcommand{\outputLplusone}	{ {\outputfutre}^{L+1}}
+\newcommand{\InputPastL}	{{\InputPast}^{L}}
+\newcommand{\inputpastL}	{{\inputpast}^{L}}
+\newcommand{\JointPast}	{{(\InputPast,\OutputPast)}}
+\newcommand{\jointpast}	{{(\inputpast,\outputpast)}}
+\newcommand{\jointpastone}	{{(\inputpast_1,\outputpast_1)}}
+\newcommand{\jointpasttwo}	{{(\inputpast_2,\outputpast_2)}}
+\newcommand{\jointpastprime} {{({\inputpast}^{\prime},{\outputpast}^{\prime})}}
+\newcommand{\NextJoint}	{{(\NextInput,\NextOutput)}}
+\newcommand{\nextjoint}	{{(\insymbol,\outsymbol)}}
+\newcommand{\AllInputPasts}	{ { \overleftarrow {\rm \InputSpace}}}
+\newcommand{\AllOutputPasts}	{ {\overleftarrow {\rm \OutputSpace}}}
+\newcommand{\DetCausalState}	{ {{\cal S}_D }}
+\newcommand{\detcausalstate}	{ {{\sigma}_D} }
+\newcommand{\DetCausalStateSet}	{ \boldsymbol{{\CausalState}_D}}
+\newcommand{\DetCausalEquivalence}	{ {\sim}_{{\epsilon}_{D}}}
+\newcommand{\PrescientEquivalence}	{ {\sim}_{\widehat{\eta}}}
+\newcommand{\FeedbackCausalState}	{ \mathcal{F}}
+\newcommand{\feedbackcausalstate}	{ \phi}
+\newcommand{\FeedbackCausalStateSet}	{ \mathbf{\FeedbackCausalState}}
+\newcommand{\JointCausalState}		{ \mathcal{J}}
+\newcommand{\JointCausalStateSet}	{ \mathbf{\JointCausalState}}
+\newcommand{\UtilityFunctional}	{ {\mathcal{L}}}
+\newcommand{\NatureState}	{ {\Omega}}
+\newcommand{\naturestate}	{ {\omega}}
+\newcommand{\NatureStateSpace}	{ {\mathbf{\NatureState}}}
+\newcommand{\AnAction}	{ {A}}
+\newcommand{\anaction}	{ {a}}
+\newcommand{\ActionSpace}	{ {\mathbf{\AnAction}}}
+
+% Abbreviations from RURO:
+\newcommand{\InfoGain}[2] { \mathcal{D} \left( {#1} || {#2} \right) }
+
+% Abbreviations from Upper Bound:
+\newcommand{\lcm}	{{\rm lcm}}
+% Double-check that this isn't in the math set already!
+
+% Abbreviations from Emergence in Space
+\newcommand{\ProcessAlphabet}	{\MeasAlphabet}
+\newcommand{\ProbEst}			{ {\widehat{\Prob}_N}}
+\newcommand{\STRegion}			{ {\mathrm K}}
+\newcommand{\STRegionVariable}		{ K}
+\newcommand{\stregionvariable}		{ k}
+\newcommand{\GlobalPast}		{ \overleftarrow{G}} 
+\newcommand{\globalpast}		{ \overleftarrow{g}} 
+\newcommand{\GlobalFuture}		{ \overrightarrow{G}}
+\newcommand{\globalfuture}		{ \overrightarrow{g}}
+\newcommand{\GlobalState}		{ \mathcal{G}}
+\newcommand{\globalstate}		{ \gamma}
+\newcommand{\GlobalStateSet}		{ {\mathbf \GlobalState}}
+\newcommand{\LocalPast}			{ \overleftarrow{L}} 
+\newcommand{\localpast}			{ \overleftarrow{l}}
+\newcommand{\AllLocalPasts}		{ \mathbf{\LocalPast}}
+\newcommand{\LocalPastRegion}		{ \overleftarrow{\mathrm L}}
+\newcommand{\LocalFuture}		{ \overrightarrow{L}}
+\newcommand{\localfuture}		{ \overrightarrow{l}}
+\newcommand{\LocalFutureRegion}		{ \overrightarrow{\mathrm L}}
+\newcommand{\LocalState}		{ \mathcal{L}}
+\newcommand{\localstate}		{ \lambda}
+\newcommand{\LocalStateSet}		{ {\mathbf \LocalState}}
+\newcommand{\PatchPast}			{ \overleftarrow{P}}
+\newcommand{\patchpast}			{ \overleftarrow{p}}
+\newcommand{\PatchPastRegion}		{ \overleftarrow{\mathrm P}}
+\newcommand{\PatchFuture}		{ \overrightarrow{P}}
+\newcommand{\patchfuture}		{ \overrightarrow{p}}
+\newcommand{\PatchFutureRegion}		{ \overrightarrow{\mathrm P}}
+\newcommand{\PatchState}		{ \mathcal{P}}
+\newcommand{\patchstate}		{ \pi}
+\newcommand{\PatchStateSet}		{ {\mathbf \PatchState}}
+\newcommand{\LocalStatesInPatch}	{\vec{\LocalState}}
+\newcommand{\localstatesinpatch}	{\vec{\localstate}}
+\newcommand{\PointInstantX}		{ {\mathbf x}}
+% Galles's original LaTeX for the cond. indep. symbol follows:
+\newcommand{\compos}{\mbox{$~\underline{~\parallel~}~$}}
+\newcommand{\ncompos}{\not\hspace{-.15in}\compos}
+\newcommand{\indep}			{ \rotatebox{90}{$\models$}}
+\newcommand{\nindep}	{\not\hspace{-.05in}\indep}
+\newcommand{\LocalEE}	{{\EE}^{loc}}
+\newcommand{\EEDensity}	{\overline{\LocalEE}}
+\newcommand{\LocalCmu}	{{\Cmu}^{loc}}
+\newcommand{\CmuDensity}	{\overline{\LocalCmu}}
+
+%%%%%%%%%%% added by sasa
+\newcommand{\FinPast}[1]	{ \overleftarrow {\MeasSymbol} \stackrel{{#1}}{}}
+\newcommand{\finpast}[1]  	{ \overleftarrow {\meassymbol}  \stackrel{{#1}}{}}
+\newcommand{\FinFuture}[1]		{ \overrightarrow{\MeasSymbol} \stackrel{{#1}}{}}
+\newcommand{\finfuture}[1]		{ \overrightarrow{\meassymbol} \stackrel{{#1}}{}}
+
+\newcommand{\Partition}	{ \AlternateState }
+\newcommand{\partitionstate}	{ \alternatestate }
+\newcommand{\PartitionSet}	{ \AlternateStateSet }
+\newcommand{\Fdet}   { F_{\rm det} }
+
+\newcommand{\Dkl}[2] { D_{\rm KL} \left( {#1} || {#2} \right) }
+
+\newcommand{\Period}	{p}
+
+% To take into account time direction
+\newcommand{\forward}{+}
+\newcommand{\reverse}{-}
+%\newcommand{\forwardreverse}{\:\!\diamond} % \pm
+\newcommand{\forwardreverse}{\pm} % \pm
+\newcommand{\FutureProcess}	{ {\Process}^{\forward} }
+\newcommand{\PastProcess}	{ {\Process}^{\reverse} }
+\newcommand{\FutureSupport}	{ {\Support}^{\forward} }
+\newcommand{\PastSupport}	{ {\Support}^{\reverse} }
+\newcommand{\ForwardProcess}	{ {\Process}^{\forward} }
+\newcommand{\ReverseProcess}	{ {\Process}^{\reverse} }
+\newcommand{\ForwardSupport}	{ {\Support}^{\forward} }
+\newcommand{\ReverseSupport}	{ {\Support}^{\reverse} }
+\newcommand{\ForwardDFA}{D^+}
+\newcommand{\ReverseDFA}{D^-}
+\newcommand{\FutureCausalState}	{ {\CausalState}^{\forward} }
+\newcommand{\futurecausalstate}	{ \sigma^{\forward} }
+\newcommand{\altfuturecausalstate}	{ \sigma^{\forward\prime} }
+\newcommand{\PastCausalState}	{ {\CausalState}^{\reverse} }
+\newcommand{\pastcausalstate}	{ \sigma^{\reverse} }
+\newcommand{\ForwardCausalState}	{ {\CausalState}^{\forward} }
+\newcommand{\forwardcausalstate}	{ \sigma^{\forward} }
+\newcommand{\altforwardcausalstate}	{ \sigma^{\forward\prime} }
+\newcommand{\ReverseCausalState}	{ {\CausalState}^{\reverse} }
+\newcommand{\reversecausalstate}	{ \sigma^{\reverse} }
+\newcommand{\BiCausalState}		{ {\CausalState}^{\forwardreverse} }
+\newcommand{\bicausalstate}		{ {\sigma}^{\forwardreverse} }
+\newcommand{\ForwardCausalStateSet}	{ {\CausalStateSet}^{\forward} }
+\newcommand{\ReverseCausalStateSet}	{ {\CausalStateSet}^{\reverse} }
+\newcommand{\FutureCausalStateSet}	{ {\CausalStateSet}^{\forward} }
+\newcommand{\PastCausalStateSet}	{ {\CausalStateSet}^{\reverse} }
+\newcommand{\BiCausalStateSet}	{ {\CausalStateSet}^{\forwardreverse} }
+\newcommand{\eMachine}	{ M }
+\newcommand{\FutureEM}	{ {\eMachine}^{\forward} }
+\newcommand{\PastEM}	{ {\eMachine}^{\reverse} }
+\newcommand{\ForwardEM}	{ {\eMachine}^{\forward} }
+\newcommand{\ReverseEM}	{ {\eMachine}^{\reverse} }
+
+\newcommand{\BiEM}		{ {\eMachine}^{\forwardreverse} }
+\newcommand{\BiEquiv}	{ {\sim}^{\forwardreverse} }
+\newcommand{\Futurehmu}	{ h_\mu^{\forward} }
+\newcommand{\Pasthmu}	{ h_\mu^{\reverse} }
+\newcommand{\FutureCmu}	{ C_\mu^{\forward} }
+\newcommand{\PastCmu}	{ C_\mu^{\reverse} }
+\newcommand{\ForwardCmu}	{ C_\mu^{\forward} }
+\newcommand{\ReverseCmu}	{ C_\mu^{\reverse} }
+
+\newcommand{\BiCmu}		{ C_\mu^{\forwardreverse} }
+\newcommand{\FutureEps}	{ \epsilon^{\forward} }
+\newcommand{\PastEps}	{ \epsilon^{\reverse} }
+\newcommand{\BiEps}	{ \epsilon^{\forwardreverse} }
+\newcommand{\FutureSim}	{ \sim^{\forward} }
+\newcommand{\PastSim}	{ \sim^{\reverse} }
+\newcommand{\FuturePC}	{\PC^{\forward}}
+\newcommand{\PastPC}		{\PC^{\reverse}}
+\newcommand{\BiPC}      {\PC^{\forwardreverse}}
+
+% Used arrows for awhile, more or less confusing?
+%\newcommand{\FutureCausalState}	{ \overrightarrow{\CausalState} }
+%\newcommand{\PastCausalState}	{ \overleftarrow{\CausalState} }
+%\newcommand{\eMachine}	{ M }
+%\newcommand{\FutureEM}	{ \overrightarrow{\eMachine} }
+%\newcommand{\PastEM}	{ \overleftarrow{\eMachine} }
+%\newcommand{\FutureCmu}	{ \overrightarrow{\Cmu} }
+%\newcommand{\PastCmu}	{ \overleftarrow{\Cmu} }
+
+%% time-reversing and mixed state presentation operators
+\newcommand{\TR}{\mathcal{T}}
+\newcommand{\MSP}{\mathcal{U}}
+\newcommand{\one}{\mathbf{1}}
+
+%% added for RURO2
+%% Note that it will always be typesett in math mode.
+%% Example usage:
+%%    The 3-block entropy is \BE[t]{3}.
+%%    The 3-block-state entropy from $t=0$ is $\BSE{3}$.
+%%
+%% The optional argument specifies the start time, defaulting to t=0.
+%% The mandatory argument specifies the length of the block (not the stop time).
+\newcommand{\lastindex}[2]{
+  \edef\tempa{0}
+  \edef\tempb{#2}
+  \ifx\tempa\tempb
+    % if the length is 0, then the final time equals the start time
+    \edef\tempc{#1}
+  \else
+    % if the start time is different from zero, then we show the sum
+    \edef\tempa{0}
+    \edef\tempb{#1}
+    \ifx\tempa\tempb
+      \edef\tempc{#2}
+    \else
+      \edef\tempc{#1+#2}
+    \fi
+  \fi
+  \tempc
+}
+\newcommand{\BE}[2][0]{
+  \ensuremath{H[\MeasSymbol_{#1}^{#2}]}
+}
+\newcommand{\BSE}[2][0]{
+  \ensuremath{H[\MeasSymbol_{#1}^{#2},\CausalState_{\lastindex{#1}{#2}}]}%
+}
+\newcommand{\SBE}[2][0]{
+  \ensuremath{H[\CausalState_{#1},\MeasSymbol_{#1}^{#2}]}
+}
+\newcommand{\SBSE}[2][0]{
+  \ensuremath{H[\CausalState_{#1},\MeasSymbol_{#1}^{#2},
+                \CausalState_{\lastindex{#1}{#2}}]}
+}
+\newcommand{\AltSBE}[2][0]{
+  \ensuremath{H[\AlternateState_{#1},\MeasSymbol_{#1}^{#2}]}
+}
+\newcommand{\AltBSE}[2][0]{
+  \ensuremath{H[\MeasSymbol_{#1}^{#2},\AlternateState_{\lastindex{#1}{#2}}]}
+}
+\newcommand{\AltSBSE}[2][0]{
+  \ensuremath{H[\AlternateState_{#1},\MeasSymbol_{#1}^{#2},
+                \AlternateState_{\lastindex{#1}{#2}}]}
+}
+
+\newcommand{\GI}{\varphi}
+\newcommand{\OI}{\zeta}
+% cryptic, gauge, oracular, Markov, and synchronization
+%%% eventually make each of the xOrder commands accept [order=true]
+\newcommand{\ORDER}{\text{order\nobreakdash-}} 
+\newcommand{\COrder}{\ensuremath{k_{\PC}}}
+\newcommand{\GOrder}{\ensuremath{k_{\GI}}}
+\newcommand{\OOrder}{\ensuremath{k_{\OI}}}
+\newcommand{\MOrder}{\ensuremath{R}}
+\newcommand{\SOrder}{\ensuremath{k_{\SI}}}
+
+%% Added to standardize the order of causal states
+%% Example usage:
+%%    $\BiCmu = H[\CSjoint] = H[\CSjoint[,]]$
+%%    $\EE = I[\CSjoint[:]] = I[\CSjoint[;]]$
+\newcommand{\CSjoint}[1][,]{
+   \edef\tempa{:}
+   \edef\tempb{#1}
+   \ifx\tempa\tempb
+      % arg1 was a colon, insert a small negative space
+      \ensuremath{\FutureCausalState\!#1\PastCausalState}
+   \else
+      % arg1 was not a colon, usually a comma or semicolon
+      \ensuremath{\FutureCausalState#1\PastCausalState}
+   \fi
+}
+
+%% (cje)
+%% Provide a command \ifpm which is true when \pm 
+%% is meant to be understood as "+ or -", opposed
+%% to "bidirectional". This differs from the usage 
+%% in TBA.  Essentially, if \forwardreverse is defined
+%% as something different, perhaps a \diamond, then
+%% we are free to interpret \pm as "+ or -".
+\newif\ifpm 
+\edef\tempa{\forwardreverse}
+\edef\tempb{\pm}
+\ifx\tempa\tempb
+   \pmfalse
+\else
+   \pmtrue  
+\fi
+
+
+
