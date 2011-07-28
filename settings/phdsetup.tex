@@ -22,8 +22,11 @@
 \usepackage{calc}
 \usepackage{breakcites}
 \usepackage[newcommands]{ragged2e}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{xifthen}
 
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \usepackage{epstopdf}
 
 \renewenvironment{abstract}{\chapter*{Abstract}}{}
@@ -36,23 +39,12 @@
 
 % [ FONT SETTINGS ]
 
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+
 \usepackage[tbtags, intlimits, namelimits]{amsmath}
-\usepackage[adobe-utopia]{mathdesign}
-
-\DeclareSymbolFont{pazomath}{OMS}{zplm}{m}{n}
-\DeclareSymbolFontAlphabet{\mathcal}{pazomath}
-\SetMathAlphabet\mathcal{bold}{OMS}{zplm}{b}{n}
-
-\SetSymbolFont{largesymbols}{normal}{OMX}{zplm}{m}{n}
-\SetSymbolFont{largesymbols}{bold}{OMX}{zplm}{m}{n}
-\SetSymbolFont{symbols}{normal}{OMS}{zplm}{m}{n}
-\SetSymbolFont{symbols}{bold}{OMS}{zplm}{b}{n}
-
-\renewcommand{\sfdefault}{phv}
-\renewcommand{\ttdefault}{fvm}
-
-\widowpenalty 8000
-\clubpenalty  8000
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
 % [ PAGE LAYOUT ]
 \usepackage{geometry}
@@ -69,7 +61,7 @@
     colorlinks  = {true},
     linktocpage = {false},
     linkcolor   = {blue},
-    citecolor   = {green},
+    citecolor   = {green!60!black},
     urlcolor    = {black},
     plainpages  = {false},
     pageanchor  = {true},
@@ -98,7 +90,7 @@
 % [ LINE SPACING ]
 
 \usepackage[doublespacing]{setspace}
-\renewcommand{\displayskipstretch}{0.0}
+\renewcommand{\displayskipstretch}{0.75}
 
 \setlength{\parskip   }{0em}
 \setlength{\parindent }{2em}
@@ -106,6 +98,8 @@
 % [ TABLE FORMATTING ]
 
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{dcolumn}
 \setlength{\heavyrulewidth}{1.5\arrayrulewidth}
 \setlength{\lightrulewidth}{1.0\arrayrulewidth}
 \setlength{\doublerulesep }{2.0\arrayrulewidth}
@@ -120,8 +114,8 @@
     {\filleft\textsc{\LARGE \chaptertitlename\ \thechapter}}%
     {-0.2ex}{\titlerule[3pt]\vspace{0.2ex}}[]
 
-\titleformat{\section}{\LARGE}{\S\thesection\hspace{0.5em}}{0ex}{}
-\titleformat{\subsection}{\Large}{\S\thesubsection\hspace{0.5em}}{0ex}{}
+\titleformat{\section}{\LARGE}{\thesection\hspace{0.5em}}{0ex}{}
+\titleformat{\subsection}{\Large}{\thesubsection\hspace{0.5em}}{0ex}{}
 \titleformat{\subsubsection}{\large}{\thesubsubsection\hspace{0.5em}}{0ex}{}
 
 \titlespacing*{\chapter}{0em}{6ex}{4ex plus 2ex minus 0ex}
@@ -153,7 +147,35 @@
 
 \newcommand{\signaturebox}[1]{\multicolumn{1}{p{4in}}{\vspace{3ex}}\\\midrule #1\\}
 
-\input{cmechabbrev}
+% Redefine AMS proof environment to have itshape
+% Note: This environment automatically adds \qed at the end. If your proof
+% ends in a math environment, the \qed is placed, undesirably, on a new line.
+% To prevent that, insert \qedhere inside the math environment.
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{%
+\par\pushQED{\qed}\normalfont%
+\topsep6\p@\@plus6\p@\relax\trivlist%
+\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\itshape\ignorespaces}{%
+\popQED\endtrivlist\@endpefalse}%
+\makeatother
+
+% TUGboat, Volume 0 (2001), No. 0
+% http://math.arizona.edu/~aprl/publications/mathclap/perlis_mathclap_24Jun2003.pdf
+% For comparison, here are the existing overlap macros:
+% \def\llap#1{\hbox to 0pt{\hss#1}}
+% \def\rlap#1{\hbox to 0pt{#1\hss}}
+\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+\def\mathllap{\mathpalette\mathllapinternal}
+\def\mathrlap{\mathpalette\mathrlapinternal}
+\def\mathclap{\mathpalette\mathclapinternal}
+\def\mathllapinternal#1#2{%
+\llap{$\mathsurround=0pt#1{#2}$}}
+\def\mathrlapinternal#1#2{%
+\rlap{$\mathsurround=0pt#1{#2}$}}
+\def\mathclapinternal#1#2{%
+\clap{$\mathsurround=0pt#1{#2}$}}
+
+\input{../settings/cmechabbrev.tex}
 
 \newcommand{\alert}[1]{\textbf{\textcolor{red}{#1}}}
 
