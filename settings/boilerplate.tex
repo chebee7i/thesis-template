@@ -1,0 +1,30 @@
+% BOILERPLATE - Allows for individual chapters to be compiled.
+%
+% Usage:
+%    \input{../settings/boilerplate} % place at start and end of chapter
+% 
+
+\def\precommands{%
+    \input{../settings/phdsetup}
+    \def\preinserted{}
+    \begin{document}
+}
+
+\def\postcommands{%
+    \singlespacing
+    \phantomsection
+    \bibliographystyle{../bibliography/expanded}
+    \bibliography{../bibliography/references}
+    \enddocument
+}
+
+\def\autoinsert{%
+    \ifx\preinserted\undefined
+        \expandafter\precommands
+    \else
+        \expandafter\postcommands
+    \fi
+}
+
+\ifx\master\undefined\expandafter\autoinsert\fi
+
