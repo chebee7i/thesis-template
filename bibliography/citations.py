@@ -24,10 +24,15 @@ import re
 
 def get_citations(fns):
     cited = set([])
-    regex = re.compile(r'\cite{([0-9A-Za-z,]+)}')
+    regex1 = re.compile(r'\cite{([0-9A-Za-z,]+)}')
+    regex2 = re.compile(r'\cite\[.*?\]{([0-9A-Za-z,]+)}')
     for fn in fns:
         with open(fn) as fh:
-            matches = re.findall(regex, fh.read())
+            matches = re.findall(regex1, fh.read())
+            for match in matches:
+                cited.update(match.split(','))
+            fh.seek(0)
+            matches = re.findall(regex2, fh.read())
             for match in matches:
                 cited.update(match.split(','))
 
