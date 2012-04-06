@@ -80,14 +80,15 @@ Customization
 To add additional chapters, create a folder "chapter#" with the 
 file "chapter#.tex" as follows:
 
-    \ifx\master\undefined\input{../settings/autocompile}\fi
+    \input{../settings/boilerplate}
+
     \chapter{Chapter Name}
     Text.
-    \ifx\master\undefined\input{../settings/autocompile}\fi
 
-In the file ./dissertation/dissertation.tex, add the line:
+    \input{../settings/boilerplate}
+
+Then, in the file ./dissertation/dissertation.tex, add the line:
 
     \input{../chapter#/chapter#}
 
-    
-    
+
