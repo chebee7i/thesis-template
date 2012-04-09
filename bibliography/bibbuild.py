@@ -3,7 +3,7 @@
     
     Example: Build a new sorted bibtex file from cited works.
     
-        $ python bibbuild.py ../chapter3/chaos.bib `find ../ -name "*.tex"` > ellison.bib
+        $ python bibbuild.py ../chapter3/existing.bib `find ../ -name "*.tex"` > new.bib
         
 """
 import sys

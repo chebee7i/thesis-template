@@ -3,7 +3,7 @@
     
     Example: Count entries in bibfile and save to pickle.
     
-        $ python bibextract.py ../chapter3/chaos.bib
+        $ python bibextract.py ../chapter3/existing.bib
     
 
 """
