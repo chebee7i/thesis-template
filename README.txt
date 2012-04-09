@@ -57,7 +57,9 @@ Figures
 -------
 
 When inserting images as figures, be sure to reference the file correctly, 
-or dissertation.tex will not properly compile. For example:
+or dissertation.tex will not properly compile. Since all files are compiled
+within a subdirectory, a correct reference will relatively enter the root
+directory and then redescend back to the image file. For example:
 
     \begin{figure}
     \centering
