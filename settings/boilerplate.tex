@@ -20,11 +20,11 @@
 
 \def\autoinsert{%
     \ifx\preinserted\undefined
-        \expandafter\precommands
+        \precommands
     \else
-        \expandafter\postcommands
+        \postcommands
     \fi
 }
 
-\ifx\master\undefined\expandafter\autoinsert\fi
+\ifx\master\undefined\autoinsert\fi
 
