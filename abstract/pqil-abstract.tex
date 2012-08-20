@@ -22,5 +22,8 @@
 \thispagestyle{empty}
 
 \begin{document}
+\renewcommand\thepage{\arabic{page}}
+\rhead{-\thepage-}
+\renewcommand\prelimheaders\relax
 \input{../abstract/abstract}
 \end{document}
